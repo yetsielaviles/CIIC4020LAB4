@@ -12,7 +12,8 @@ import interfaces.Sorter;
 public class IntegerSorterTester {
 	//private static Sorter<Integer> sorter; 
 	private static Random rnd; 
-	private static ArrayList<Sorter<Integer>> sortersList = new ArrayList<>(); 
+	private static ArrayList<Sorter<Integer>> sortersList = new ArrayList<>();
+	
 	
 	public static void main(String[] args) { 
 		sortersList.add(new BubbleSortSorter<Integer>()); 
