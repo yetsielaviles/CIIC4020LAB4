@@ -1,9 +1,11 @@
 package sortersTesterClasses;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Random;
 
+import dataGenerator.DataGenerator;
 import sorterClasses.BubbleSortSorter;
 import sorterClasses.InsertionSortSorter;
 import sorterClasses.SelectionSortSorter;
@@ -23,6 +25,7 @@ public class IntegerSorterTester {
 		test("Sorting Using Default Comparator<Integer>", null); 
 		test("Sorting Using IntegerComparator1", new IntegerComparator1()); 
 		test("Sorting Using IntegerComparator2", new IntegerComparator2()); 
+		testEntero("Sorting Using Entero values and Default Comparator");
 	}
 	
 	private static void test(String msg, Comparator<Integer> cmp) { 
@@ -60,5 +63,25 @@ public class IntegerSorterTester {
 			a[j] = rnd.nextInt(100); 
 		return a;
 	}
+	private static void testEntero(String msg){
+	Entero[] array = new Entero[50];
+	DataGenerator dgenerator = new DataGenerator(50);
+    Integer[] a = dgenerator.generateData();
+    for (int i = 0; i < 10; i++) {
+        array[i] = new Entero(a[i]);
+	}
+    BubbleSortSorter<Entero> sorter = new BubbleSortSorter<>();
+    sorter.sort(array, null);
+    System.out.println("Entero Bubble Sort: " + Arrays.toString(array));
+    
+    InsertionSortSorter<Entero> sorter2 = new InsertionSortSorter<>();
+    sorter2.sort(array, null);
+    System.out.println("Entero Insertion Sort: " + Arrays.toString(array));
+    
+    
 
+    
+    
+    
+}
 }
